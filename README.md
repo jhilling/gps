@@ -12,6 +12,7 @@ still placeholders, I'm working on converting to useful tests!
 They can be run with `make test` or `python -m unittest discover -v`
 
 # The scripts
+
 Various scripts for manipulating GPS data in GPX file (see sample-data).
 
 ##gpx2txt.py
@@ -88,7 +89,8 @@ Ensure the docker image is built (only need to do this once)
 ./gpsserver.sh build
 ``` 
 
-###Individual server
+*Individual server*
+
 Start a server
 ```
 ./gpsserver.sh start
@@ -109,7 +111,7 @@ Stop all servers
 ./gpsserver.sh stop
 ```
 
-###Swarm of servers
+*Swarm of servers*
 
 Initialize a swarm called hello.  Will standup several server instances and a load balancer on port 80.
 ```
