@@ -1,0 +1,69 @@
+
+version: '3'
+
+################################################################################
+# https://medium.com/@nirgn/load-balancing-applications-with-haproxy-and-docker-d719b7c5b231
+# Start many workers, and one load balancer listening on port 80
+# 
+# Tested with:  
+# Docker version 18.06.1-ce, build e68fc7a
+# docker-compose version 1.22.0, build f46880fe
+#
+# From: https://medium.com/@nirgn/load-balancing-applications-with-haproxy-and-docker-d719b7c5b231
+# 
+# docker swarm init
+#
+# docker stack deploy --compose-file=docker-compose.yml prod
+# docker stack ls
+# docker service ls
+# docker stack services prod
+# A different hostname will be printed for each request
+# curl http://localhost:80
+# curl http://localhost:80
+
+################################################################################
+
+services:
+  gps-server:
+    image: "gps-server:latest"
+    ports:
+      - "5000"
+    environment:
+      - SERVICE_PORTS=5000
+    volumes:
+      - gps-data:/root/GPS_Tracks
+    deploy:
+      replicas: 6
+      update_config:
+        parallelism: 3
+        delay: 10s
+      restart_policy:
+        condition: on-failure
+        max_attempts: 3
+        window: 120s
+
+    networks:
+      - web
+
+  proxy:
+    image: dockercloud/haproxy
+    depends_on:
+      - gps-server
+    environment:
+      - BALANCE=leastconn
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - 80:80
+    networks:
+      - web
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+
+networks:
+  web:
+    driver: overlay
+
+volumes:
+  gps-data: {}
