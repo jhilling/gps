@@ -14,7 +14,7 @@ They can be run with `make test` or `python -m unittest discover -v`
 # The scripts
 Various scripts for manipulating GPS data in GPX file (see sample-data).
 
-####gpx2txt.py
+##gpx2txt.py
 
 This script will "describe" a gps route in plain text, describing various 
 landmarks passed with the time/distance.  It also calls out any stops en-route and where they were near.  
@@ -60,7 +60,7 @@ Moving time 40.5% - 116.2 minutes out of 171.0 minutes
 81 stops over 43.3 km|26.9 mi
 ```
 
-####gpxRestFlask.py
+##gpxRestFlask.py
 
 gpx2txt functionality can optionally be run as a webserver and process requests via REST using gpxRestFlask.py.
 
@@ -79,7 +79,7 @@ but we used a server to handle the request rather than a one-shot process.
 
 See gpsserver.sh.
 
-####gpsserver.sh
+##gpsserver.sh
 
 gpsserver.sh provides some abstractions to setup and control the server with docker.
 
@@ -88,7 +88,7 @@ Ensure the docker image is built (only need to do this once)
 ./gpsserver.sh build
 ``` 
 
-#####Individual server
+###Individual server
 Start a server
 ```
 ./gpsserver.sh start
@@ -109,7 +109,7 @@ Stop all servers
 ./gpsserver.sh stop
 ```
 
-#####Swarm of servers
+###Swarm of servers
 
 Initialize a swarm called hello.  Will standup several server instances and a load balancer on port 80.
 ```
@@ -132,19 +132,19 @@ Re-scale the swarm to 3 workers.
 ```
 
 
-####tools/gpxSplitter.gpx
+##tools/gpxSplitter.gpx
 
 This utility will split a gpx tracks into smaller gpx files.
 
 Splits an individual track when large time or distance gap is found between trackpoints.
 
 
-####tools/...
+##tools/...
 
 There are various other little gpx utility scripts under gps/tools. One day they will be documented here.
 
 
-## Dependencies
+# Dependencies
 
 Please see requirements.txt for the list of dependencies.
 
