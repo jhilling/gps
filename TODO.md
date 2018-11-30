@@ -1,6 +1,12 @@
 
 ###TODO
 
+MetaPrinter doesn't tell you the speed!!
+	would be good if it gave you average speed in terms
+	of track segments. 
+	maybe gpx2txt could print average speed between landmarks.
+
+
 make sure the osm caching (+ others?) will cope when the data is shared across containers
 e.g. write to a temporary name and move when complete etc
 
