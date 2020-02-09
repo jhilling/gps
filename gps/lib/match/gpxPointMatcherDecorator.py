@@ -131,8 +131,8 @@ class MatchSummaryDecorator(MatchDecorator):
         # self.log.i("distance %g" % (track.distance))
 
         self.log.i("Moving time %.1f%% - %s out of %s" % (hitStats["mv_pct"],
-                                                          gps.lib.gpxUtil.duration(hitStats["movingTime"]),
-                                                          gps.lib.gpxUtil.duration(hitStats["stopTimeTotal"])))
+                                                          gps.lib.gpxUtil.duration(hitStats["stopTimeTotal"]),
+                                                          gps.lib.gpxUtil.duration(hitStats["movingTime"])))
 
         # self.log.i("Stopped time %.1f%% - %s out of %s" % (st_pct, gpxUtil.duration(st), gpxUtil.duration(ts)))
         self.log.i("%d stops over %s" % (hitStats["stops"], gps.lib.gpxUtil.distance(hitStats["distance"])))

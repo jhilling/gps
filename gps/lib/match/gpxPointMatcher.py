@@ -101,8 +101,8 @@ class TrackTxtEncoder(object):
             #        self.log.i("distance %g" % (track.distance))
 
             lines.append("Moving time %.1f%% - %s out of %s" % (hitStats["mv_pct"],
-                                                                gps.lib.gpxUtil.duration(hitStats["movingTime"]),
-                                                                gps.lib.gpxUtil.duration(hitStats["stopTimeTotal"])))
+                                                                gps.lib.gpxUtil.duration(hitStats["stopTimeTotal"]),
+                                                                gps.lib.gpxUtil.duration(hitStats["movingTime"])))
 
             #self.log.i("Stopped time %.1f%% - %s out of %s" % (st_pct, gpxUtil.duration(st), gpxUtil.duration(ts)))
             lines.append("%d stops over %s" % (hitStats["stops"], gps.lib.gpxUtil.distance(hitStats["distance"])))
