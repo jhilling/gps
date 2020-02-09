@@ -7,6 +7,11 @@ Wahoo gps splits every ride.. Now need opposite of Split, e.g. g
 join|merge to combine tracks which should really be together.
 Could possibly do gpxCat followed by a gpxSplit.
 
+MetaPrinter doesn't tell you the speed!!
+	would be good if it gave you average speed in terms
+	of track segments. 
+	maybe gpx2txt could print average speed between landmarks.
+
 
 An "ls" command which prints filenames, + essentials, e.g. distance, date
 
