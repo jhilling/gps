@@ -19,7 +19,7 @@ Various scripts for manipulating GPS data in GPX file (see sample-data).
 
 This script will "describe" a gps route in plain text, describing various 
 landmarks passed with the time/distance.  It also calls out any stops en-route and where they were near.  
-It automatically pull down landmarks from openstreetmap and caches the data locally.
+It automatically pulls down landmarks from openstreetmap and caches the data locally.
 
 For example:
  ```
