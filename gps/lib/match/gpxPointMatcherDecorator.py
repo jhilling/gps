@@ -130,7 +130,7 @@ class MatchSummaryDecorator(MatchDecorator):
         # self.log.i("%d/%d\t%.1f%%\t%s" % (hit, hit + miss, match_pct, track.name))
         # self.log.i("distance %g" % (track.distance))
 
-        self.log.i("Moving time %.1f%% - %s out of %s" % (hitStats["mv_pct"],
+        self.log.i("Moving time %.1f%% - %s moving, %s stopped" % (hitStats["mv_pct"],
                                                           gps.lib.gpxUtil.duration(hitStats["movingTime"]),
                                                           gps.lib.gpxUtil.duration(hitStats["stopTimeTotal"])))
 
