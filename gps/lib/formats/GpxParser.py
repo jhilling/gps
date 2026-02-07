@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from __future__ import print_function
+
 
 import sys
 import errno
@@ -267,7 +267,8 @@ class GpxParser(ContentHandler, object):
             try:
                 [observer.nextFile(f) for observer in self.observers]
 
-                parser.parse(f)
+                with open(f, 'r') as file_handle:
+                    parser.parse(file_handle)
 
             except IOError as e:
 

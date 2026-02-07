@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 
 """
 This is the layer below the Rest Handler (see gpxRestFlask.py).
@@ -73,7 +73,7 @@ class GpxRest(object):
         self.parse_result.done()
 
     def load_wp(self, filename, dthres):
-        print("Loading " + filename)
+        print(("Loading " + filename))
         self.wpg.Parse(filename, dthres)
 
     def auto_load(self):

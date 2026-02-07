@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import sys
 
 
@@ -30,4 +30,4 @@ class LogWriter(object):
 
 
 if __name__ == "__main__":
-    print("%s: I don't do anything standalone" % sys.argv[0])
+    print(("%s: I don't do anything standalone" % sys.argv[0]))

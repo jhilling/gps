@@ -1,8 +1,8 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 from xml.sax.saxutils import escape
 
-from gpxUtil import utf8
+from .gpxUtil import utf8
 
 
 class Xml(object):
@@ -43,6 +43,6 @@ class Xml(object):
     
 if __name__ == "__main__":
     import sys
-    print("%s: I don't do anything standalone" % sys.argv[0])
+    print(("%s: I don't do anything standalone" % sys.argv[0]))
 
 

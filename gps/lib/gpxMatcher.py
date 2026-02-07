@@ -1,6 +1,6 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
-from __future__ import print_function
+
 
 from gps.lib.gpxUtil import interpolate_thres_lower_metres
 from gps.lib.gpxUtil import interpolate_thres_upper_metres

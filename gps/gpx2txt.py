@@ -1,6 +1,6 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
-from __future__ import print_function
+
 
 import sys
 import os
@@ -437,7 +437,7 @@ Separate the files which are used for waypoints and tracks with a --
 
     if not opFormatter:
         print("Unknown formatter", outputFormat)
-        print("Valid values are:", outputFormats.keys())
+        print("Valid values are:", list(outputFormats.keys()))
         sys.exit(1)
 
     # Instantiate the outputter

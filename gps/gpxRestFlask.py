@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 
@@ -21,7 +21,7 @@ import pathhack
 
 import sys
 
-from StringIO import StringIO
+from io import StringIO
 
 import werkzeug
 from flask import Flask

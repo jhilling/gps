@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from __future__ import print_function
+
 
 from gps.lib.gpxXml import Xml
 from gps.lib.primitives.points import Point
@@ -88,10 +88,10 @@ class Bounds(object):
         b = B
         while b < T:
             t = b + lat
-    
+
             l = L
             while l < R:
-                r = l+long
+                r = l + long
                 yield b, l, t, r
                 l += long
             b += lat
@@ -102,12 +102,16 @@ class Bounds(object):
 
     def width(self):
         """Get width in metres"""
+        if self.leftObj is None or self.rightObj is None:
+            return 0
         wl = Point(0, self.leftObj.lon)
         wr = Point(0, self.rightObj.lon)
         return wl.distance(wr)
 
     def height(self):
         """Get height in metres"""
+        if self.topObj is None or self.bottomObj is None:
+            return 0
         ht = Point(self.topObj.lat, 0)
         hb = Point(self.bottomObj.lat, 0)
         return ht.distance(hb)

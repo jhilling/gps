@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 from gps.lib.gpsObserver import GpxObserver
 from gps.lib.formats.GpxParser import GpxParser

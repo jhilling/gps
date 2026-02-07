@@ -3,13 +3,13 @@
 """
 
 If get:
-UnicodeEncodeError: 'ascii' codec can't encode character u'\u2019' in position 54: ordinal not in range(128)
+UnicodeEncodeError: 'ascii' codec can't encode character u'\\u2019' in position 54: ordinal not in range(128)
 
 Do this if getting errors redirecting output to a file:
 export PYTHONIOENCODING=utf-8
 """
 
-from __future__ import print_function
+
 
 import os
 import sys

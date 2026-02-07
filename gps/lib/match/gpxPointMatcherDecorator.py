@@ -4,7 +4,7 @@
 Decorators for classes of type MatchBase + subclasses (see gpxPointMatcher.py)
 """
 
-from gpxPointMatcher import TrackTxt, PointTxt, stopTxt, TrackTxtEncoder
+from .gpxPointMatcher import TrackTxt, PointTxt, stopTxt, TrackTxtEncoder
 
 import gps.lib.gpxUtil
 

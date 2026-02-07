@@ -1,6 +1,6 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
-from __future__ import print_function
+
 
 import sys
 import os
@@ -11,7 +11,7 @@ from gps.lib.gpxQTree import SegmentsQTree
 from gps.lib.primitives.gpxBounds import Bounds
 from gps.lib.primitives.points import Point
 from gps.lib.logWriter import LogWriter
-from gpxWaypointDB import WaypointDB
+from .gpxWaypointDB import WaypointDB
 
 log = LogWriter()
 

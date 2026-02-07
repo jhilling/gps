@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from __future__ import print_function
+
 
 from gps.lib.logWriter import LogWriter
 import gps.lib.gpxUtil

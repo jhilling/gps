@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 A little Point Of Interest fetcher (poi == Point Of Interest).
@@ -8,12 +8,12 @@ and caches the data locally.
 
 """
 
-from __future__ import print_function
+
 
 import tempfile
 import os
 import sys
-import urllib2
+import urllib.request, urllib.error, urllib.parse
 import hashlib
 import gps.tools.osm2gpx
 
@@ -38,7 +38,7 @@ def cacheFilename(url, dir, extn):
     base cache file on hash of the url
     """
     h = hashlib.md5()
-    h.update(url)
+    h.update(url.encode('utf-8'))
 
     fn = h.hexdigest()
 
@@ -56,10 +56,10 @@ def cachedFetch(url, useCache=True):
         print("Using cached", full_path, file=sys.stderr)
     else:
         try:
-            req = urllib2.Request(url)
+            req = urllib.request.Request(url)
             print("Requesting", url, file=sys.stderr)
 
-            f = urllib2.urlopen(req)
+            f = urllib.request.urlopen(req)
 
             html = f.read()
 
@@ -88,7 +88,7 @@ def makeUrl(bltr):
 #    q.append(qs("way", "highway", "primary", *bltr))
 
     urlRaw = "(%s);(._;>;);out meta;" % ("".join(q))
-    url = "http://overpass-api.de/api/interpreter?data=" + urllib2.quote(urlRaw)
+    url = "http://overpass-api.de/api/interpreter?data=" + urllib.parse.quote(urlRaw)
     
     return url
 

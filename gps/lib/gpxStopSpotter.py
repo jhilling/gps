@@ -1,6 +1,6 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
-from __future__ import print_function
+
 
 import pathhack
 
@@ -69,7 +69,7 @@ class Stop(object):
            # Let's assume if the d is greater than 10 k that you've jumped in a plane or something.
             t2 = trackpoint.time_d(self.tpCurr)
             if t2 > (5 * 60):
-                log.dbg("(Big time gap of %d minutes - considering this point to be part of the stop. Distance is %d meters)" % (t2/60, d))
+                log.dbg("(Big time gap of %d minutes - considering this point to be part of the stop. Distance is %d meters)" % (t2//60, d))
                 #log.dbg("wp is " + str(self.nearestWP))
                 #log.dbg("tp is " + str(trackpoint))
                 inRange = True
@@ -111,11 +111,11 @@ class Stop(object):
     
     def __str__(self):
         
-        time = self.getTimeSpan() / 60
+        time = self.getTimeSpan() // 60
         units = "minutes"
-        
-        if (time >= 60): 
-            time /= 60
+
+        if (time >= 60):
+            time //= 60
             units = "hours"
 
         return """

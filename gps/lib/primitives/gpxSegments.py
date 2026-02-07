@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from __future__ import print_function
+
 from gps.lib.primitives.gpxBounds import Bounds
 from gps.lib.primitives.points import Point
 from gps.lib.gpxXml import Xml
@@ -264,7 +264,7 @@ class TrackSegments(Segments):
             seconds = trackpoint.time_d(self.last_tp)
 
             if abs(seconds) > split_track_threshold_secs:
-                self.log.i("Large time gap found between waypoints: %d hours" %  (seconds / (60*60)))
+                self.log.i("Large time gap found between waypoints: %d hours" %  (seconds // (60*60)))
                 #self.log.i("LTP %s, %s" % (self.last_tp, self.last_tp.time_obj))
                 #self.log.i("TP %s, %s" % (trackpoint, trackpoint.time_obj))
 
@@ -468,9 +468,12 @@ class Track(TrackSegments):
         return "TRACK"
 
     def filename(self, index=0, ext=True):
-        
+
         # Format the date by hand because we don't want utc offsets in there
-        time = self.time_first.strftime("%Y-%m-%d %H-%M-%S")
+        if self.time_first is None:
+            time = "unknown-time"
+        else:
+            time = self.time_first.strftime("%Y-%m-%d %H-%M-%S")
         name = "%s %s-%d - %s" % (self.gpxType(), time, index, self.name)
         name = self.removeBadFilenameChars(name)
         if ext:

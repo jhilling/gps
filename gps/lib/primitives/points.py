@@ -9,7 +9,7 @@ sudo apt-get install python-dateutil
 
 """
 
-from __future__ import print_function
+
 
 import sys
 import math
@@ -330,7 +330,7 @@ class Point(object):
             d = self.distance(other)
 
             if d > upper_limit:
-                required_vpoints = int(d / upper_limit)
+                required_vpoints = d // upper_limit
 
                 # Make sure the points have timestamps before trying to 
                 # interpolate the time 

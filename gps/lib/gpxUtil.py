@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import os
 import tempfile
@@ -8,13 +8,8 @@ interpolate_thres_upper_metres=100 # for gaps bigger than this, return interpola
 
 
 def utf8(content):
-    try:
-        s = content.encode('UTF-8')
-#         print("encoded as utf8")
-        return s 
-    except:
-#         print("encoded as str")
-        return str(content)
+    # Python 3: strings are already unicode, just return as string
+    return str(content)
 
 
 def SafeVal(x, defaultv="-"):
@@ -76,6 +71,6 @@ def duration(d_seconds):
 
 if __name__ == "__main__":
     import sys
-    print("%s: I don't do anything standalone" % sys.argv[0])
+    print(("%s: I don't do anything standalone" % sys.argv[0]))
 
 
