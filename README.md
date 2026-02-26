@@ -152,7 +152,7 @@ Please see requirements.txt for the list of dependencies.
 
 Run:
 
-`pip install -r requirements.txt` 
+`pip3 install -r requirements.txt` 
 
 or 
 

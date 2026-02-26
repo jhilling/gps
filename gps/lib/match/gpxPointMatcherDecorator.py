@@ -98,11 +98,11 @@ class MatchLoggerDecorator(MatchDecorator):
     Add some more logging to a basic matcher outputter
     """
 
-    def pointInOrOutOfRange(self, pt, distance):
-        self.log.i("Found point: %s" % pt)
+    def pointInOrOutOfRange(self, tp, wp, distance):
+        self.log.i("Found point: %s" % tp)
         self.log.i("Distance: %f (out of range)" % distance)
 
-        self.parent.pointInOrOutOfRange(pt, distance)
+        self.parent.pointInOrOutOfRange(tp, wp, distance)
 
     def longTimeAtThisOne(self, pt, tp_first, tp_last, durationStationary):
         self.parent.longTimeAtThisOne(pt, tp_first, tp_last, durationStationary)
